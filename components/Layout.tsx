@@ -30,6 +30,20 @@ export function Layout({
           content="Fraol Lemecha's blog about tech and other interesting stuff."
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FraolLemecha" />
+        <meta name="twitter:creator" content="@FraolLemecha" />
+        <meta property="og:url" content="https://factorem.vercel.app/" />
+        <meta property="og:title" content="Factorem" />
+        <meta
+          property="og:description"
+          content="Fraol Lemecha's blog about tech and other interesting stuff."
+        />
+        <meta
+          property="og:image"
+          content="https://factorem.vercel.app/logo.png"
+        />
       </Head>
 
       <Nav onHamburgerClick={() => setMenuOpen(true)} />
