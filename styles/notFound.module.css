@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  margin: 1rem;
+  color: transparent;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  background: #000;
+  text-decoration: none;
+  box-shadow: 10px 10px white;
+}

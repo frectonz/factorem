@@ -1,0 +1,37 @@
+.hero {
+  margin: 0 auto;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+
+  margin-bottom: 20px;
+}
+
+.hero__details {
+  color: #fff;
+  text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero__title {
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.hero__description {
+  text-align: center;
+  line-height: 1.375;
+  border: 2px solid white;
+  border-image: url(/line.svg);
+}
+
+.hero__image img {
+  width: 100%;
+
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-image: url(/mask.svg);
+}

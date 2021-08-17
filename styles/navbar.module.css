@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.logo svg {
+  width: 120px;
+  background: black;
+  transition: transform ease-in;
+}
+
+.logo svg:hover {
+  animation: bobble 0.5s 1;
+}
+
+.nav_hamburger::before {
+  font-size: 30px;
+  content: "\2261";
+  cursor: pointer;
+}
+
+@keyframes bobble {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-30deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  90% {
+    transform: rotate(-5deg);
+  }
+}
