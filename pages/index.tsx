@@ -7,7 +7,7 @@ interface Props {
 
 const IndexPage = ({ articles }: Props) => {
   return (
-    <Layout homePage>
+    <Layout>
       <Hero />
       <ArticlesList articles={articles} />
     </Layout>

@@ -4,12 +4,17 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { ArticleData, getAllArticleIds, getArticleData } from "../../lib";
 
 interface Props {
+  id: string;
   article: ArticleData;
 }
 
-export default function Article({ article }: Props) {
+export default function Article({ id, article }: Props) {
   return (
-    <Layout title={article.title}>
+    <Layout
+      title={article.title}
+      urlSuffix={`articles/${id}`}
+      description={article.description}
+    >
       <article className={styles.article}>
         <header className={styles.title_box}>
           <h1 className={styles.title}>{article.title}</h1>
@@ -46,6 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      id: params.id,
       article,
     },
   };

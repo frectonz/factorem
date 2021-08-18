@@ -10,14 +10,13 @@ export function ArticlesList({ articles }: Props) {
   return (
     <>
       {articles.map((article) => (
-        <a key={article.id}>
-          <ArticleCard
-            id={article.id}
-            title={article.title}
-            publishedDate={article.date}
-            description={article.description}
-          />
-        </a>
+        <ArticleCard
+          key={article.id}
+          id={article.id}
+          title={article.title}
+          publishedDate={article.date}
+          description={article.description}
+        />
       ))}
     </>
   );

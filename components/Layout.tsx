@@ -7,38 +7,49 @@ import { Footer } from "./Footer";
 type Props = {
   title?: string;
   showInsideMain?: boolean;
-  homePage?: boolean;
+  urlSuffix?: string;
+  description?: string;
   children?: ReactNode;
 };
 
 export function Layout({
   children,
-  title = "Factorem",
-  homePage = false,
+  title = "",
   showInsideMain = true,
+  urlSuffix = "",
+  description = "",
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <Head>
-        <title>{homePage ? "Factorem" : `Factorem | ${title}`}</title>
+        <title>{title ? `Factorem | ${title}` : "Factorem"}</title>
         <meta charSet="utf-8" />
         <link rel="icon" href="/logo.ico" />
         <meta
           name="description"
-          content="Fraol Lemecha's blog about tech and other interesting stuff."
+          content={
+            description ||
+            "Fraol Lemecha's blog about tech and other interesting stuff."
+          }
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FraolLemecha" />
         <meta name="twitter:creator" content="@FraolLemecha" />
-        <meta property="og:url" content="https://factorem.vercel.app/" />
-        <meta property="og:title" content="Factorem" />
+        <meta
+          property="og:url"
+          content={`https://factorem.vercel.app/${urlSuffix}`}
+        />
+        <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="Fraol Lemecha's blog about tech and other interesting stuff."
+          content={
+            description ||
+            "Fraol Lemecha's blog about tech and other interesting stuff."
+          }
         />
         <meta
           property="og:image"

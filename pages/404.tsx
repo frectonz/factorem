@@ -3,7 +3,7 @@ import { Layout } from "../components";
 import styles from "../styles/notFound.module.css";
 
 const NotFoundPage = () => (
-  <Layout title="404 | Factorem" showInsideMain={false}>
+  <Layout title="404" showInsideMain={false}>
     <main className={styles.main}>
       <h1 className={styles.title}>Error 404</h1>
       <Link href="/">
