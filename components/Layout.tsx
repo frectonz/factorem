@@ -55,6 +55,12 @@ export function Layout({
           property="og:image"
           content="https://factorem.vercel.app/logo.png"
         />
+
+        <script
+          defer
+          data-domain="factorem.vercel.app"
+          src="https://plausible.io/js/plausible.js"
+        />
       </Head>
 
       <Nav onHamburgerClick={() => setMenuOpen(true)} />

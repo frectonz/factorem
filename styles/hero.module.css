@@ -24,8 +24,6 @@
 .hero__description {
   text-align: center;
   line-height: 1.375;
-  border: 2px solid white;
-  border-image: url(/line.svg);
 }
 
 .hero__image img {
