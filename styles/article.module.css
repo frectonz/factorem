@@ -25,6 +25,7 @@
 .title {
   font-size: 3rem;
   margin: 1rem auto;
+  line-height: 3rem;
 }
 
 .article_box {
@@ -49,6 +50,7 @@
   margin: 1rem auto;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.479);
+  overflow: scroll;
 }
 
 .article pre * {
