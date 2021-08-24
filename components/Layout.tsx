@@ -58,9 +58,9 @@ export function Layout({
 
         <script
           defer
-          data-domain="factorem.vercel.app"
+          data-domain="factorem-ten.vercel.app"
           src="https://plausible.io/js/plausible.js"
-        />
+        ></script>
       </Head>
 
       <Nav onHamburgerClick={() => setMenuOpen(true)} />
