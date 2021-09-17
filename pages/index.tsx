@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { Stack } from "@chakra-ui/react";
 
 // Components
+import Seo from "../components/layout/Seo";
 import Hero from "../components/main/Hero";
 import CardsList from "../components/cards/CardsList";
 import MainContainer from "../components/utils/Container";
@@ -28,6 +29,7 @@ export default function IndexPage({ articles, projects }: IndexProps) {
 
   return (
     <>
+      <Seo />
       <Hero {...config.frontPageHeadline} />
       <MainContainer>
         <Stack alignItems="flex-start" spacing={24} py={100}>

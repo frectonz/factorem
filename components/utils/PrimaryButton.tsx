@@ -24,6 +24,7 @@ export default function PrimaryButton({
 
   return (
     <Button
+      as="div"
       bg={
         variant === "normal"
           ? colorMode === "light"

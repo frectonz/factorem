@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { Project, getAllProjects } from "../lib";
 
 // Components
+import Seo from "../components/layout/Seo";
 import Hero from "../components/main/Hero";
 import ProjectCardList from "../components/cards/ProjectCardList";
 
@@ -17,6 +18,7 @@ interface ProjectsProps {
 export default function ProjectPage({ projects }: ProjectsProps) {
   return (
     <>
+      <Seo title="Projects" />
       <Hero {...config.projectsPageHeadline} />
       <ProjectCardList projects={projects} />
     </>

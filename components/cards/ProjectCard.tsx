@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Link target="_blank" href={project.website}>
               <Text>Website</Text>
             </Link>
-            <FaExternalLinkSquareAlt />
+            <FaExternalLinkSquareAlt style={{ marginBottom: 5 }} />
           </HStack>
           <Text color="gray.500">{project.description}</Text>
           <Heading size="sm" color="gray.300">

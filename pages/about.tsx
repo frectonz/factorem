@@ -1,4 +1,5 @@
 // Components
+import Seo from "../components/layout/Seo";
 import MainContainer from "../components/utils/Container";
 
 // ChakraUI
@@ -7,6 +8,7 @@ import { Stack, Heading, Image, Text, Grid, Box } from "@chakra-ui/react";
 export default function About() {
   return (
     <>
+      <Seo title="About" />
       <MainContainer py={100}>
         <Grid
           gap={50}
@@ -16,7 +18,7 @@ export default function About() {
             <Image
               width="md"
               boxShadow="2xl"
-              src="/hero.jpeg"
+              src="/me.jpeg"
               borderRadius="2xl"
             />
 

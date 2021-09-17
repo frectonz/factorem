@@ -9,8 +9,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // Components
+import Seo from "../../components/layout/Seo";
 import Hero from "../../components/main/Hero";
-import Layout from "../../components/layout/Layout";
 import MainContainer from "../../components/utils/Container";
 import { components } from "../../components/utils/components";
 
@@ -25,6 +25,7 @@ interface Props {
 export default function Article({ article, serialized }: Props) {
   return (
     <>
+      <Seo title={article.title} />
       <Hero
         title={article.title}
         text={article.description}
