@@ -40,13 +40,7 @@ export default function Hero({ title, text, image, children }: HeroProps) {
       >
         {title}
       </Heading>
-      <Text
-        variant="prominent"
-        maxWidth="45ch"
-        textAlign="center"
-        textColor="white"
-        textShadow="3px 3px 20px rgba(0,0,0,.5)"
-      >
+      <Text maxWidth="45ch" textAlign="center" textColor="white">
         {text}
       </Text>
       {children}
