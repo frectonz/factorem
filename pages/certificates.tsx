@@ -2,7 +2,6 @@
 import { Grid, Stack, Image, Heading } from "@chakra-ui/react";
 
 // Components
-import Layout from "../components/layout/Layout";
 import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/Container";
 
@@ -11,7 +10,7 @@ import certificates from "../data/config/certificates.json";
 
 export default function Certificates() {
   return (
-    <Layout>
+    <>
       <MainContainer py={100}>
         <Grid
           gap={10}
@@ -31,6 +30,6 @@ export default function Certificates() {
           })}
         </Grid>
       </MainContainer>
-    </Layout>
+    </>
   );
 }

@@ -22,7 +22,9 @@ export function Card({ card }: CardProps) {
 
   return (
     <>
-      {isExternal ? (
+      {link === "" ? (
+        <MotionCard card={card} />
+      ) : isExternal ? (
         <a target="_blank" href={link}>
           <MotionCard card={card} />
         </a>

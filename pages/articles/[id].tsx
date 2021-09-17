@@ -15,7 +15,7 @@ import MainContainer from "../../components/utils/Container";
 import { components } from "../../components/utils/components";
 
 // ChakraUI
-import { Text, Divider, Image } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 interface Props {
   article: ArticleData;
@@ -24,16 +24,17 @@ interface Props {
 
 export default function Article({ article, serialized }: Props) {
   return (
-    <Layout>
-      <Hero title={article.title} text={article.description}>
-        <Image width="100vw" src={article.image} />
-      </Hero>
+    <>
+      <Hero
+        title={article.title}
+        text={article.description}
+        image={article.image}
+      />
       <MainContainer py={5}>
         <Text mb={2}>Created {article.date}</Text>
-        <Divider />
         <MDXRemote {...serialized} components={components} />
       </MainContainer>
-    </Layout>
+    </>
   );
 }
 

@@ -6,7 +6,6 @@ import { Article, getAllArticles } from "../../lib";
 
 // Components
 import Hero from "../../components/main/Hero";
-import Layout from "../../components/layout/Layout";
 import ArticleCardList from "../../components/cards/ArticleCardList";
 
 import config from "../../data/config/site.json";
@@ -17,10 +16,10 @@ interface ArticlesProps {
 
 export default function ArticlesPage({ articles }: ArticlesProps) {
   return (
-    <Layout>
+    <>
       <Hero {...config.articlesPageHeadline} />
       <ArticleCardList articles={articles} />
-    </Layout>
+    </>
   );
 }
 

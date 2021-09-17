@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.name}
           </Heading>
           <HStack>
-            <Link href={project.website}>
+            <Link target="_blank" href={project.website}>
               <Text>Website</Text>
             </Link>
             <FaExternalLinkSquareAlt />

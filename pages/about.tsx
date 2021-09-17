@@ -1,5 +1,4 @@
 // Components
-import Layout from "../components/layout/Layout";
 import MainContainer from "../components/utils/Container";
 
 // ChakraUI
@@ -7,7 +6,7 @@ import { Stack, Heading, Image, Text, Grid, Box } from "@chakra-ui/react";
 
 export default function About() {
   return (
-    <Layout>
+    <>
       <MainContainer py={100}>
         <Grid
           gap={50}
@@ -44,13 +43,13 @@ export default function About() {
             </Text>
 
             <Text py={2}>
-              I started programing last year because of an app that I got from
-              my friend called Spy boy and it had a 5-line VBS script that
-              popped out a window that had an input box and a button with the
-              text ok. When you type in some text and click ok the computer will
-              speak the text that you typed into the input box. I had no idea
-              what that 5-line code meant but I was happy that it was
-              functional. After I started to explore more about VBS on the
+              I started programing 3 years ago because of an app that I got from
+              my friend. The app was called Spy boy and it had a 5-line VBS
+              script that popped out a window that had an input box and a button
+              with the text ok. When you type in some text and click ok the
+              computer will speak the text that you typed into the input box. I
+              had no idea what that 5-line code meant but I was happy that it
+              was functional. After I started to explore more about VBS on the
               internet and I learnt many things like variables and control
               structures. After three weeks I made my own VBS script quiz app.
               After some time, I thought not everything could have been made
@@ -62,6 +61,6 @@ export default function About() {
           </Box>
         </Grid>
       </MainContainer>
-    </Layout>
+    </>
   );
 }

@@ -6,7 +6,6 @@ import { Stack } from "@chakra-ui/react";
 
 // Components
 import Hero from "../components/main/Hero";
-import Layout from "../components/layout/Layout";
 import CardsList from "../components/cards/CardsList";
 import MainContainer from "../components/utils/Container";
 import LatestArticle from "../components/main/LatestArticle";
@@ -28,7 +27,7 @@ export default function IndexPage({ articles, projects }: IndexProps) {
   const firstArticle = articles[0];
 
   return (
-    <Layout>
+    <>
       <Hero {...config.frontPageHeadline} />
       <MainContainer>
         <Stack alignItems="flex-start" spacing={24} py={100}>
@@ -78,7 +77,7 @@ export default function IndexPage({ articles, projects }: IndexProps) {
           />
         </Stack>
       </MainContainer>
-    </Layout>
+    </>
   );
 }
 

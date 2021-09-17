@@ -35,14 +35,6 @@
     },
     "isExternal": true
   },
-  "tweetsSection": {
-    "title": "Tweets",
-    "link": {
-      "text": "Twitter",
-      "href": "https://twitter.com/FraolLemecha"
-    },
-    "isExternal": true
-  },
   "certificatesSection": {
     "title": "Certificates",
     "link": {
@@ -57,14 +49,14 @@
   },
   "frontPageHeadline": {
     "title": "What is Factorem?",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+    "text": "Factorem is the word \"maker\" in Latin. This website contains information related to one maker. Fraol Lemecha"
   },
   "projectsPageHeadline": {
     "title": "Projects",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+    "text": "This pages contains projects ranging from saturday night personal projects to learning projects and some websites i did for clients."
   },
   "articlesPageHeadline": {
     "title": "Articles",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+    "text": "Articles related to tech and any random thing i am excited about. I hope you find the article interesting."
   }
 }
