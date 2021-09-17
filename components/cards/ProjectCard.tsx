@@ -42,15 +42,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.name}
           </Heading>
           <HStack>
-            <Link target="_blank" href={project.website}>
+            <Link target="_blank" rel="noopener" href={project.website}>
               <Text>Website</Text>
             </Link>
             <FaExternalLinkSquareAlt style={{ marginBottom: 5 }} />
           </HStack>
-          <Text color="gray.500">{project.description}</Text>
-          <Heading size="sm" color="gray.300">
-            {project.date}
-          </Heading>
+          <Text>{project.description}</Text>
+          <Heading size="sm">{project.date}</Heading>
         </Stack>
       </Grid>
     </Box>
