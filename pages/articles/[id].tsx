@@ -1,32 +1,38 @@
-import { Layout } from "../../components";
-import styles from "../../styles/article.module.css";
+// Static Generation
 import { GetStaticPaths, GetStaticProps } from "next";
+
+// Library
 import { ArticleData, getAllArticleIds, getArticleData } from "../../lib";
 
+// MDX
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+
+// Components
+import Hero from "../../components/main/Hero";
+import Layout from "../../components/layout/Layout";
+import MainContainer from "../../components/utils/Container";
+import { components } from "../../components/utils/components";
+
+// ChakraUI
+import { Text, Divider, Image } from "@chakra-ui/react";
+
 interface Props {
-  id: string;
   article: ArticleData;
+  serialized: MDXRemoteSerializeResult;
 }
 
-export default function Article({ id, article }: Props) {
+export default function Article({ article, serialized }: Props) {
   return (
-    <Layout
-      title={article.title}
-      urlSuffix={`articles/${id}`}
-      description={article.description}
-    >
-      <article className={styles.article}>
-        <header className={styles.title_box}>
-          <h1 className={styles.title}>{article.title}</h1>
-          <time>{new Date(article.date).toDateString()}</time>{" "}
-          <p>{article.description}</p>
-        </header>
-
-        <main
-          className={styles.article_box}
-          dangerouslySetInnerHTML={{ __html: article.contentHtml }}
-        />
-      </article>
+    <Layout>
+      <Hero title={article.title} text={article.description}>
+        <Image width="100vw" src={article.image} />
+      </Hero>
+      <MainContainer py={5}>
+        <Text mb={2}>Created {article.date}</Text>
+        <Divider />
+        <MDXRemote {...serialized} components={components} />
+      </MainContainer>
     </Layout>
   );
 }
@@ -48,11 +54,12 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const article = await getArticleData(params.id as string);
+  const serialized = await serialize(article.content);
 
   return {
     props: {
-      id: params.id,
       article,
+      serialized,
     },
   };
 };

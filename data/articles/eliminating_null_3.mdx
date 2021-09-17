@@ -1,0 +1,244 @@
+---
+title: Eliminating Null 3
+description: Using options to eliminate null checks from your codebase.
+date: "2020-08-18"
+image: /logo.png
+---
+
+<img src="/test.png" />
+The existence of null has been the oldest and the most notorious source of runtime
+errors. Null has plagued our code with a never ending chain of null checks. It is
+time we eliminate null by using techniques that have been shown in languages like
+`Rust` and `Haskell`.
+
+Here are some programming languages that don't have null
+
+- Rust
+- Haskell
+- OCaml
+- Standard ML
+- Swift
+
+In the JavaScript/TypeScript world things are particularly worse because we have two separate
+types of null,`null` and `undefined`.
+
+```javascript
+null == undefined; // true
+null === undefined; // false
+```
+
+```javascript
+typeof null; // => "object"
+typeof undefined; // => "undefined"
+```
+
+This article goes deep into this topic.
+[Click Here](https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/)
+
+In this article I will show you how to eliminate null from your code by using a simple
+implementation of the option type from rust in typescript.
+
+I have been learning rust for a couple of months now and I wanted to introduce one of the great
+features of rust to TypeScript and JavaScript. So I created the **optionem** library.
+
+# A simple introduction to Option
+
+The option type is used in places were some operation will return either a value or no value.
+Null is often used to represent the no value case independent of the type of the value to be
+returned. We have seen that this leads to unexpected problems if the programmer calling that
+operation forgets to handle the no value case.
+
+For example let's look at a `Map`.
+
+```typescript
+interface Map<K, V> {
+  // ..
+  get(key: K): V | undefined;
+  // ..
+}
+```
+
+The Map interface has a method called get. The functionality of get is returning a **value** stored
+inside the map using the key associated with the value otherwise if there is no value stored in the
+map with the given key it returns **undefined**.
+
+Now lets see what happens when we call get in our code.
+
+```typescript
+const map = new Map();
+const value = map.get("key");
+
+console.log(value.length); // ERROR
+```
+
+This returns an error because we forgot to check for undefined. This is a dumb example because if you
+use typescript you wouldn't make this error. But it shows how forgetting null checks causes runtime
+errors.
+
+```typescript
+const map = new Map();
+
+map.set("key1", "");
+map.set("key2", "value");
+
+if (map.get("key1")) {
+  // doesn't execute
+  console.log("value exists at key1");
+}
+
+if (map.get("key2")) {
+  // executes
+  console.log("value exists at key2");
+}
+
+if (map.get("key3")) {
+  // doesn't execute
+  console.log("SHOULD NOT RUN: no value at key3");
+}
+```
+
+This code produces the following output
+
+```text
+value exists at key2
+```
+
+If we look at the third if-condition we can see that we didn't have a value with the key key3 so the
+get method returned an undefined and due to undefined being a `falsey` value in javascript
+the if-condition didn't get executed .
+
+Now lets look at the first if-condition. the value at the key key1 is an empty string and empty string
+is a `falsey` value, so even though the get method returned a value the value returned was also
+`falsey` thus the if condition didn't get executed.
+
+```typescript withLineNumbers=true
+if ("") {
+  console.log("SHOULD NOT RUN");
+} else {
+  console.log("empty string is falsey");
+}
+```
+
+To fix the bug in the first if-condition we need to explicitly check for an undefined.
+
+```typescript title=map.ts
+const map = new Map();
+
+map.set("key1", "");
+map.set("key2", "value");
+
+if (map.get("key1") !== undefined) {
+  console.log("value exists at key1");
+}
+
+// ...
+```
+
+As we can see in the above example we had to jump through a lot of hoops to get the functionality we
+wanted. Now let see how much the Option type would be useful in our example. We will use the option
+type from the optionem library.
+
+[Optionem Github](https://www.github.com/fraol0912/optionem)
+
+An implementation of Map that returns an option.
+
+```typescript
+import { Option } from "optionem";
+interface OptionMap<K, V> {
+  // ...
+  get(key: K): Option<V>;
+  // ...
+}
+```
+
+First Let's see what option is.
+
+### What is the Option type
+
+The option type represents an optional value. An option is either a `Some` that contains a value or a
+`None` that does not. The option type is used in places where in normal circumstances you get returned
+a _null_ or _undefined_ if the operation failed.
+
+Think of them this way. The option type has two variants the none and some variants.
+
+```typescript
+interface Option<T> {
+  // ...
+}
+
+class Some<T> implements Option<T> {
+  // ...
+}
+
+class None<T> implements Option<T> {
+  // ...
+}
+```
+
+Example of using options
+
+```typescript
+import { Option } from "optionem";
+
+const some: Option<number> = new Some(10);
+const none: Option<number> = new None();
+```
+
+Now let's return to our map example.
+
+```typescript
+class OptionObjMap<K, V> implements OptionMap<K, V> {
+  // ...
+}
+
+const map = new OptionObjMap<string, number>();
+
+map.set("key1", 10);
+
+map.get("key1").match({
+  Some(val) {
+    console.log("key1", val);
+  },
+  None() {
+    console.log("key1: None");
+  },
+});
+
+map.get("key2").match({
+  Some(val) {
+    console.log("key2", val);
+  },
+  None() {
+    console.log("key2: None");
+  },
+});
+```
+
+The above code produces the following output
+
+```text
+key1 10
+key2: None
+```
+
+The match method on options takes in an object with two functions namely **None** and
+**Some**. The functions are called in different ways depending on which variant of
+the option the match method was called on:
+
+- If you call it on a Some it calls the Some function with the value contained
+  inside the some.
+- If you call it on a None it calls the None function.
+
+By using the the match method of the option we can handle both variants of the
+returned Option declaratively. We can see that using has made our code more readable.
+
+### Optionem
+
+There is also another type that I have observed to be very useful in rust. It is
+the **Result** type. I am planning on implementing the result type in optionem. Another
+missing component is being able to pass async functions to methods on the option interface.
+
+Nonetheless it is a really cool simple library use it in your projects, start it on github and
+Thank you for reading this article.
+
+[Optionem Github](https://www.github.com/fraol0912/optionem)

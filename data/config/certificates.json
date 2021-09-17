@@ -1,0 +1,22 @@
+[
+  {
+    "name": "CSS certificate from sololearn",
+    "image": "/certificates/CSS.jpg"
+  },
+  {
+    "name": "HTML certificate from sololearn",
+    "image": "/certificates/HTML.jpg"
+  },
+  {
+    "name": "JavaScript certificate from sololearn",
+    "image": "/certificates/JavaScript.jpg"
+  },
+  {
+    "name": "jQuery certificate from sololearn",
+    "image": "/certificates/jQuery.jpg"
+  },
+  {
+    "name": "Python certificate from sololearn",
+    "image": "/certificates/Python.jpg"
+  }
+]

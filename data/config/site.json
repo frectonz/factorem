@@ -1,0 +1,70 @@
+{
+  "links": [
+    {
+      "name": "Articles",
+      "href": "/articles"
+    },
+    {
+      "name": "Projects",
+      "href": "/projects"
+    },
+    {
+      "name": "About",
+      "href": "/about"
+    }
+  ],
+  "articlesSection": {
+    "title": "Articles",
+    "link": {
+      "text": "Go to Articles",
+      "href": "/articles"
+    }
+  },
+  "projectsSection": {
+    "title": "Projects",
+    "link": {
+      "text": "Go to Projects",
+      "href": "/projects"
+    }
+  },
+  "repositoriesSection": {
+    "title": "Repositories",
+    "link": {
+      "text": "GitHub",
+      "href": "https://www.github.com/fraol0912"
+    },
+    "isExternal": true
+  },
+  "tweetsSection": {
+    "title": "Tweets",
+    "link": {
+      "text": "Twitter",
+      "href": "https://twitter.com/FraolLemecha"
+    },
+    "isExternal": true
+  },
+  "certificatesSection": {
+    "title": "Certificates",
+    "link": {
+      "text": "Go to Certificates",
+      "href": "/certificates"
+    }
+  },
+  "socialMedia": {
+    "github": "https://github.com/fraol0912",
+    "twitter": "https://twitter.com/FraolLemecha",
+    "linkedIn": "https://www.linkedin.com/in/fraol-lemecha/"
+  },
+  "frontPageHeadline": {
+    "title": "What is Factorem?",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+  },
+  "projectsPageHeadline": {
+    "title": "Projects",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+  },
+  "articlesPageHeadline": {
+    "title": "Articles",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic incidunt natus maxime culpa eaque tempora soluta itaque nesciunt nemo."
+  }
+}

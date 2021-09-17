@@ -1,18 +1,19 @@
+import dayjs from "dayjs";
 import { join } from "path";
 import matter from "gray-matter";
 import { readdirSync, readFileSync } from "fs";
-
-import hljs from "highlight.js";
-import { Marked } from "@ts-stack/markdown";
 
 export interface Article {
   id: string;
   date: string;
   title: string;
+  image: string;
   description: string;
 }
 
 const ARTICLES_DIR = join(process.cwd(), "factorem", "../data/articles");
+
+const EXTENSION = ".mdx";
 
 export function getAllArticles(): Article[] {
   const files = readdirSync(ARTICLES_DIR);
@@ -24,9 +25,10 @@ export function getAllArticles(): Article[] {
     const { data } = matter(content);
 
     return {
-      id: file.replace(/\.md$/, ""),
+      id: file.replace(EXTENSION, ""),
       title: data.title,
-      date: data.date,
+      date: formatDate(data.date),
+      image: data.image,
       description: data.description,
     };
   });
@@ -47,30 +49,25 @@ export function getAllArticleIds(): string[] {
 
 export interface ArticleData {
   title: string;
-  description: string;
   date: string;
-  contentHtml: string;
+  image: string;
+  content: string;
+  description: string;
 }
 
 export async function getArticleData(id: string): Promise<ArticleData> {
-  const file = join(ARTICLES_DIR, `${id}.md`);
+  const file = join(ARTICLES_DIR, `${id}${EXTENSION}`);
   const content = readFileSync(file);
 
   const { data, content: mdContent } = matter(content);
 
-  Marked.setOptions({
-    highlight: (code, lang) =>
-      hljs.highlight(code, {
-        language: lang,
-      }).value,
-  });
-
-  const contentHtml = Marked.parse(mdContent);
-
   return {
     title: data.title,
     description: data.description,
-    date: data.date,
-    contentHtml,
+    date: formatDate(data.date),
+    image: data.image,
+    content: mdContent,
   };
 }
+
+const formatDate = (date: string) => dayjs(date).format("ddd, MMM DD, YYYY");

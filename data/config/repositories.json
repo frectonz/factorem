@@ -1,0 +1,20 @@
+[
+  {
+    "isExternal": true,
+    "title": "Factorem",
+    "bgImg": "/repositories/factorem.png",
+    "link": "https://github.com/fraol0912/factorem"
+  },
+  {
+    "isExternal": true,
+    "title": "Optionem",
+    "bgImg": "/repositories/optionem.png",
+    "link": "https://github.com/fraol0912/optionem"
+  },
+  {
+    "isExternal": true,
+    "title": "awesome ethiopian startup guide",
+    "bgImg": "/repositories/awesome-ethiopian-startup-guide.png",
+    "link": "https://github.com/fraol0912/awesome-ethiopian-startup-guide"
+  }
+]
