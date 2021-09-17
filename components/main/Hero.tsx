@@ -33,11 +33,7 @@ export default function Hero({ title, text, image, children }: HeroProps) {
       bgGradient={bg}
       bgImage={image && image}
     >
-      <Heading
-        as="h1"
-        textShadow="3px 3px 20px rgba(0,0,0,.5)"
-        textColor="white"
-      >
+      <Heading as="h1" textColor="white">
         {title}
       </Heading>
       <Text maxWidth="45ch" textAlign="center" textColor="white">

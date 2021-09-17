@@ -1,13 +1,11 @@
 // ChakraUI
-import { Tooltip, IconButton, useClipboard } from "@chakra-ui/react";
-import { useState } from "react";
+import { Tooltip, IconButton, useBoolean } from "@chakra-ui/react";
 
 // Icon
 import { FaLink } from "react-icons/fa";
 
 export default function CopyURL() {
-  const [copied, setCopied] = useState(false);
-  const { onCopy } = useClipboard("aa");
+  const [copied, setCopied] = useBoolean(false);
 
   return (
     <Tooltip
@@ -19,10 +17,9 @@ export default function CopyURL() {
         variant="ghost"
         aria-label="Copy URL to clipboard"
         title="Copy URL to clipboard"
-        icon={<FaLink />}
+        icon={<FaLink fontSize="1rem" />}
         onClick={() => {
-          onCopy();
-          setCopied(true);
+          setCopied.toggle();
         }}
       />
     </Tooltip>
