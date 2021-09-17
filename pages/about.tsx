@@ -16,6 +16,7 @@ export default function About() {
         >
           <Stack align="center" justify="center">
             <Image
+              alt="Me: Fraol Lemecha"
               width="md"
               boxShadow="2xl"
               src="/me.webp"
