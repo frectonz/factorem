@@ -1,5 +1,5 @@
 name: Rectangle Animation
-image: /projects/rectangle_animation.png
+image: /projects/rectangle_animation.webp
 website: https://reactangle-animation.netlify.app/
 date: March 27, 2020
 description: This sample website has a nice animation with rectangles. It kills the rectangles when you hover over them.
