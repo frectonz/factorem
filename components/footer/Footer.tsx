@@ -42,6 +42,7 @@ export default function Footer() {
           <Text>
             All content in this website by Fraol Lemecha is marked with{" "}
             <Link
+              rel="noopener"
               target="_blank"
               href="https://creativecommons.org/publicdomain/zero/1.0/"
             >
@@ -60,13 +61,28 @@ export default function Footer() {
 
           <Heading as="h1">Accounts</Heading>
           <HStack>
-            <a href={config.socialMedia.linkedIn} target="_blank">
+            <a
+              href={config.socialMedia.linkedIn}
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener"
+            >
               <FaLinkedin fontSize="1.3rem" />
             </a>
-            <a href={config.socialMedia.github} target="_blank">
+            <a
+              href={config.socialMedia.github}
+              title="GitHub"
+              target="_blank"
+              rel="noopener"
+            >
               <FaGithub fontSize="1.3rem" />
             </a>
-            <a href={config.socialMedia.twitter} target="_blank">
+            <a
+              href={config.socialMedia.twitter}
+              title="Twitter"
+              target="_blank"
+              rel="noopener"
+            >
               <FaTwitter fontSize="1.3rem" />
             </a>
           </HStack>

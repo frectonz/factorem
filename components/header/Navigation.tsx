@@ -36,12 +36,10 @@ interface NavLink {
 
 function LinkItem({ link }: { link: NavLink }) {
   return (
-    <NextLink href={link.href}>
-      <a>
-        <ChakraLink as="div" fontSize={[`md`, null, null, `lg`]} p="2">
-          {link.name}
-        </ChakraLink>
-      </a>
-    </NextLink>
+    <ChakraLink as="li" fontSize={[`md`, null, null, `lg`]} p="2">
+      <NextLink href={link.href}>
+        <a>{link.name}</a>
+      </NextLink>
+    </ChakraLink>
   );
 }

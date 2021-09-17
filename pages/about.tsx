@@ -18,7 +18,7 @@ export default function About() {
             <Image
               width="md"
               boxShadow="2xl"
-              src="/me.jpeg"
+              src="/me.webp"
               borderRadius="2xl"
             />
 

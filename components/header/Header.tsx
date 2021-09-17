@@ -35,7 +35,7 @@ export default function Header() {
           }}
         >
           <NextLink href="/">
-            <a>
+            <a title="Go to Home Page">
               <Logo />
             </a>
           </NextLink>

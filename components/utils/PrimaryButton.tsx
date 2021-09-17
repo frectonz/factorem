@@ -35,7 +35,7 @@ export default function PrimaryButton({
       variant={variant === "normal" ? "primary" : "link"}
       color={
         variant === "normal"
-          ? "white"
+          ? "black"
           : colorMode === "light"
           ? "black"
           : "white"

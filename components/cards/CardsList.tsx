@@ -29,7 +29,7 @@ export default function CardsList({
       <Flex justifyContent="space-between" alignItems="center">
         <Badge variant="subtle">{title}</Badge>
         {isExternal ? (
-          <a target="_blank" href={link.href}>
+          <a target="_blank" rel="noopener" href={link.href}>
             <PrimaryButton variant="subtle">{link.text}</PrimaryButton>
           </a>
         ) : (
