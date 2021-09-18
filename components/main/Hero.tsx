@@ -32,6 +32,8 @@ export default function Hero({ title, text, image, children }: HeroProps) {
       py={150}
       bgGradient={bg}
       bgImage={image && image}
+      bgPos="center"
+      bgRepeat="no-repeat"
     >
       <Heading as="h1" textColor="white">
         {title}
