@@ -67,7 +67,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
             >
-              <FaLinkedin fontSize="1.3rem" />
+              <FaLinkedin fontSize="2rem" />
             </a>
             <a
               href={config.socialMedia.github}
@@ -75,7 +75,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
             >
-              <FaGithub fontSize="1.3rem" />
+              <FaGithub fontSize="2rem" />
             </a>
             <a
               href={config.socialMedia.twitter}
@@ -83,7 +83,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
             >
-              <FaTwitter fontSize="1.3rem" />
+              <FaTwitter fontSize="2rem" />
             </a>
           </HStack>
         </Stack>
