@@ -2,4 +2,4 @@
 
 A blog about tech stuff by Fraol Lemecha.
 
-[Live Website](https://factorem.vercel.app/)
+[Live Website](https://factorem.netlify.app/)
