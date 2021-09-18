@@ -1,0 +1,7 @@
+name: Photo Studio
+image: /projects/photo_studio.webp
+date: September 18, 2021
+website: https://photostudio-sample.netlify.app/
+description: This sample website has nice animation around the
+  cursor as the it is moved around the webpage. It also has a
+  nice grid css class for the galley section.
