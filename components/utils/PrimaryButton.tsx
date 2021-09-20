@@ -30,7 +30,7 @@ export default function PrimaryButton({
           ? colorMode === "light"
             ? "blue.500"
             : "orange.500"
-          : null
+          : ""
       }
       variant={variant === "normal" ? "primary" : "link"}
       color={

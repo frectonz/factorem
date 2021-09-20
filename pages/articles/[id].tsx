@@ -17,12 +17,12 @@ import { components } from "../../components/utils/components";
 // ChakraUI
 import { Text } from "@chakra-ui/react";
 
-interface Props {
+interface ArticleProps {
   article: ArticleData;
   serialized: MDXRemoteSerializeResult;
 }
 
-export default function Article({ article, serialized }: Props) {
+export default function Article({ article, serialized }: ArticleProps) {
   return (
     <>
       <Seo title={article.title} />
@@ -55,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const article = await getArticleData(params.id as string);
+  const article = await getArticleData(params?.id as string);
   const serialized = await serialize(article.content);
 
   return {

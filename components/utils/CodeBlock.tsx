@@ -9,8 +9,11 @@ import Highlight, { defaultProps, Language } from "prism-react-renderer";
 // Components
 import { Copy } from "./Copy";
 
-const getLanguage = (className = ""): string =>
-  className.split("language-").pop();
+const getLanguage = (className = ""): string => {
+  const language = className.split("language-").pop();
+
+  return typeof language === "undefined" ? "text" : language;
+};
 
 interface CodeBlockProps {
   title?: string;

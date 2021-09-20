@@ -8,6 +8,7 @@ import {
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 // Components
 import MotionBox from "./MotionBox";
@@ -15,53 +16,57 @@ import CodeBlock from "./CodeBlock";
 
 const padding = 2;
 
-const H1 = ({ children }) => {
-  return (
-    <Heading size="xl" py={padding}>
-      {children}
-    </Heading>
-  );
-};
+interface ComponentProps {
+  children: ReactNode;
+}
 
-const H2 = ({ children }) => {
-  return (
-    <Heading size="md" py={padding}>
-      {children}
-    </Heading>
-  );
-};
+const H1 = ({ children }: ComponentProps) => (
+  <Heading size="xl" py={padding}>
+    {children}
+  </Heading>
+);
 
-const H3 = ({ children }) => {
-  return (
-    <Heading size="md" py={padding}>
-      {children}
-    </Heading>
-  );
-};
+const H2 = ({ children }: ComponentProps) => (
+  <Heading size="md" py={padding}>
+    {children}
+  </Heading>
+);
 
-const H4 = ({ children }) => {
-  return (
-    <Heading size="sm" py={padding}>
-      {children}
-    </Heading>
-  );
-};
+const H3 = ({ children }: ComponentProps) => (
+  <Heading size="md" py={padding}>
+    {children}
+  </Heading>
+);
 
-const UL = ({ children }) => (
+const H4 = ({ children }: ComponentProps) => (
+  <Heading size="sm" py={padding}>
+    {children}
+  </Heading>
+);
+
+const UL = ({ children }: ComponentProps) => (
   <UnorderedList py={padding}>{children}</UnorderedList>
 );
 
-const P = ({ children }) => <Text py={padding}>{children}</Text>;
+const P = ({ children }: ComponentProps) => (
+  <Text py={padding}>{children}</Text>
+);
 
-const InlineCode = ({ children }) => <Code variant="subtle">{children}</Code>;
+const InlineCode = ({ children }: ComponentProps) => (
+  <Code variant="subtle">{children}</Code>
+);
 
-const IMG = ({ src }) => (
+interface ImageProps {
+  src: string;
+}
+
+const IMG = ({ src }: ImageProps) => (
   <MotionBox my={padding}>
     <Image borderRadius="xl" boxShadow="2xl" src={src} />
   </MotionBox>
 );
 
-const preToCodeBlock = (preProps) => {
+const preToCodeBlock = (preProps: any) => {
   if (preProps?.children?.props?.mdxType === `code`) {
     const {
       children: codeString,
@@ -93,7 +98,7 @@ export const components = {
   li: ListItem,
   inlineCode: InlineCode,
 
-  pre: (preProps) => {
+  pre: (preProps: any) => {
     const props = preToCodeBlock(preProps);
     // if there's a codeString and some props, we passed the test
     if (props) {
