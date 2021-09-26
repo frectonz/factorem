@@ -27,6 +27,7 @@ export default function Article({ article, serialized }: ArticleProps) {
     <>
       <Seo title={article.title} />
       <Hero
+        isAnArticle
         title={article.title}
         text={article.description}
         image={article.image}
