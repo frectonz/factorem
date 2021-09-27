@@ -1,3 +1,6 @@
+// NextJs
+import NextLink from "next/link";
+
 // ChakraUI
 import { Stack, Grid, Heading, Text, Box } from "@chakra-ui/react";
 
@@ -32,9 +35,13 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           bgImage={article.image}
         />
         <Stack justify="center">
-          <Heading py={2} as="h1" transition="all 500ms ease-in">
-            {article.title}
-          </Heading>
+          <NextLink href={`/articles/${article.id}`}>
+            <a>
+              <Heading py={2} as="h1" transition="all 500ms ease-in">
+                {article.title}
+              </Heading>
+            </a>
+          </NextLink>
           <Text color="gray.500">{article.description}</Text>
           <Heading size="sm" color="gray.300">
             {article.date}

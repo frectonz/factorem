@@ -66,6 +66,10 @@ const IMG = ({ src }: ImageProps) => (
   </MotionBox>
 );
 
+const A = ({ children }: ComponentProps) => (
+  <Link color="purple.500">{children}</Link>
+);
+
 const preToCodeBlock = (preProps: any) => {
   if (preProps?.children?.props?.mdxType === `code`) {
     const {
@@ -87,13 +91,13 @@ const preToCodeBlock = (preProps: any) => {
 };
 
 export const components = {
+  a: A,
   p: P,
   h1: H1,
   h2: H2,
   h3: H3,
   h4: H4,
   ul: UL,
-  a: Link,
   img: IMG,
   li: ListItem,
   inlineCode: InlineCode,
