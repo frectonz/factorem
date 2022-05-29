@@ -1,0 +1,5 @@
+name: OXO
+image: /projects/oxo.png
+website: https://play-oxo.netlify.com
+date: March 29, 2022
+description: Tic tac toe in elm

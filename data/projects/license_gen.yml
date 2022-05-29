@@ -1,0 +1,5 @@
+name: license-gen
+image: /projects/license-gen.svg
+date: May 10, 2022
+website: https://asciinema.org/a/496158
+description: A license generator made with rust.

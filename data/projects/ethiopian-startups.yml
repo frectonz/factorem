@@ -1,7 +1,5 @@
 name: Ethiopian Startups
-image: /projects/echo_web.webp
+image: /projects/ethiopian-startups.webp
 date: September 18, 2021
-website: https://echo-web.netlify.app/
-description: This a sample website to showcase my work and abilities.
-  This work is focused on css that is why there is not much
-  on the javascript side of things. This project uses scss
+website: https://ethiopian-startups.vercel.app/
+description: The big list of Ethiopian startups.

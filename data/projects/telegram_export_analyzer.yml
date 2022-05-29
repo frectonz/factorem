@@ -1,0 +1,5 @@
+name: Telegram Export Analyzer
+image: /projects/telegram_export_analyzer.png
+date: April 24, 2022
+website: https://telegram-export-analyzer.netlify.app/
+description: An analysis tool that shows you different analytics from data exported from telegram groups.

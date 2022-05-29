@@ -34,12 +34,14 @@ export function getAllProjects(): Project[] {
     };
   });
 
-  projects.sort(({ date: a }, { date: b }) => {
-    const dateA = new Date(a).getTime();
-    const dateB = new Date(b).getTime();
+  projects
+    .sort(({ date: a }, { date: b }) => {
+      const dateA = new Date(a).getTime();
+      const dateB = new Date(b).getTime();
 
-    return dateA - dateB;
-  });
+      return dateA - dateB;
+    })
+    .reverse();
 
   return projects;
 }

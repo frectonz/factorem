@@ -1,0 +1,5 @@
+name: manifest-gen
+image: /projects/manifest_gen.svg
+date: December 4, 2021
+website: https://asciinema.org/a/496160
+description: A manifest.json generator

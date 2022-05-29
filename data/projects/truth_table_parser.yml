@@ -1,0 +1,5 @@
+name: Truth Table Parser
+image: /projects/truth_table_parser.svg
+date: May 5, 2021
+website: https://asciinema.org/a/496113
+description: A REPL tool and library for generating truth tables from a logical proposition.

@@ -1,0 +1,5 @@
+name: Joke Mate
+image: /projects/joke_mate.png
+date: July 31, 2020
+website: https://joke-mate.vercel.app/
+description: A react app that generates a random joke.
