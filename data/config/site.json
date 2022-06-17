@@ -35,13 +35,6 @@
     },
     "isExternal": true
   },
-  "certificatesSection": {
-    "title": "Certificates",
-    "link": {
-      "text": "Go to Certificates",
-      "href": "/certificates"
-    }
-  },
   "socialMedia": {
     "github": "https://github.com/frectonz",
     "twitter": "https://twitter.com/frectonz",

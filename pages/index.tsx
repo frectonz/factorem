@@ -17,7 +17,6 @@ import { Article, getAllArticles, getAllProjects, Project } from "../lib";
 // Config
 import config from "../data/config/site.json";
 import repositories from "../data/config/repositories.json";
-import certificates from "../data/config/certificates.json";
 
 interface IndexProps {
   articles: Article[];
@@ -63,20 +62,6 @@ export default function IndexPage({ articles, projects }: IndexProps) {
           />
 
           <CardsList {...config.repositoriesSection} cards={repositories} />
-
-          <CardsList
-            {...config.certificatesSection}
-            cards={certificates
-              .map((certificate) => {
-                return {
-                  link: "",
-                  isExternal: true,
-                  title: certificate.name,
-                  bgImg: certificate.image,
-                };
-              })
-              .slice(0, 3)}
-          />
         </Stack>
       </MainContainer>
     </>
